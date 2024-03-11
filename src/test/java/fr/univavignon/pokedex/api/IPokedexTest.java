@@ -46,7 +46,7 @@ public class IPokedexTest {
         try {
             pokedex.getPokemon(151);
         } catch (PokedexException e) {
-            assertEquals("tamere", e.getMessage());
+            assertEquals("Invalid ID", e.getMessage());
         }
     }
 }

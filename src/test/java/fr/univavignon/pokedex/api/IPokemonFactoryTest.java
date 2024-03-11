@@ -13,7 +13,8 @@ public class IPokemonFactoryTest {
     @Before
     public void setUp() {
         iPokemonFactory = mock(IPokemonFactory.class);
-        when(iPokemonFactory.createPokemon(0, 613, 64, 4000, 4)).thenReturn(new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56));
+        when(iPokemonFactory.createPokemon(0, 613, 64, 4000, 4))
+                .thenReturn(new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56));
     }
 
     @Test

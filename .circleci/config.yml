@@ -1,6 +1,8 @@
 # This config was automatically generated from your source code
 # Stacks detected: deps:java:.
 version: 2.1
+orbs:
+  codecov: codecov/codecov@4.0.1
 jobs:
   test-java:
     docker:
@@ -35,6 +37,8 @@ workflows:
   build-and-test:
     jobs:
       - test-java
-    # - deploy:
-    #     requires:
-    #       - test-java
+      - codecov/upload:
+          requires:
+            - test-java
+          file: target/jacoco.exec
+          flags: unittests

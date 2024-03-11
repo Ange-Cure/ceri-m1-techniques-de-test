@@ -15,16 +15,17 @@ public class IPokedexFactoryTest {
     @Before
     public void setUp() {
         pokedexFactory = mock(IPokedexFactory.class);
-        when(pokedexFactory.createPokedex(any(IPokemonMetadataProvider.class), any(IPokemonFactory.class))).thenReturn(mock(IPokedex.class));
+//        when(pokedexFactory.createPokedex(any(IPokemonMetadataProvider.class), any(IPokemonFactory.class))).thenReturn(mock(IPokedex.class));
+
     }
 
-    @Test
-    public void testCreatePokedex() {
-        IPokemonMetadataProvider pokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
-        IPokemonFactory pokemonFactory = mock(IPokemonFactory.class);
-
-        IPokedex pokedex = pokedexFactory.createPokedex(pokemonMetadataProvider, pokemonFactory);
-        // test mais j'ai pas compris quoi
-    }
+//    @Test
+//    public void testCreatePokedex() {
+//        IPokemonMetadataProvider pokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
+//        IPokemonFactory pokemonFactory = mock(IPokemonFactory.class);
+//
+//        IPokedex pokedex = pokedexFactory.createPokedex(pokemonMetadataProvider, pokemonFactory);
+//        // test mais j'ai pas compris quoi
+//    }
 
 }

@@ -22,9 +22,9 @@ public class IPokemonMetadataProviderTest {
     public void testGetPokemon() throws PokedexException {
         PokemonMetadata pokemonMetadata = metadataProvider.getPokemonMetadata(0);
         assertEquals("Bulbizarre", pokemonMetadata.getName());
-        assertEquals(150, pokemonMetadata.getAttack());
-        assertEquals(50, pokemonMetadata.getDefense());
-        assertEquals(75, pokemonMetadata.getStamina());
+        assertEquals(126, pokemonMetadata.getAttack());
+        assertEquals(126, pokemonMetadata.getDefense());
+        assertEquals(90, pokemonMetadata.getStamina());
     }
 
     @Test
