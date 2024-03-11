@@ -16,7 +16,6 @@ public class IPokemonTrainerFactoryTest {
         iPokemonTrainerFactory = mock(IPokemonTrainerFactory.class);
         IPokedexFactory iPokedexFactory = mock(IPokedexFactory.class);
         when(iPokemonTrainerFactory.createTrainer("Ange", Team.MYSTIC, iPokedexFactory)).thenReturn(new PokemonTrainer("Ange", Team.MYSTIC, pokedex));
-
     }
 
     @Test
@@ -25,5 +24,6 @@ public class IPokemonTrainerFactoryTest {
         PokemonTrainer pokemonTrainer = new PokemonTrainer("Ange", Team.MYSTIC, pokedex);
         assertEquals("Ange", pokemonTrainer.getName());
         assertEquals(Team.MYSTIC, pokemonTrainer.getTeam());
+        assertEquals(pokedex, pokemonTrainer.getPokedex());
     }
 }
