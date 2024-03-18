@@ -3,6 +3,8 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -51,9 +53,21 @@ public class IPokedexTest {
         try {
             assertEquals(0, pokedex.addPokemon(pokemon1));
             assertEquals(1, pokedex.addPokemon(pokemon2));
-            pokedex.getPokemon(1);
+            Pokemon pokemon = pokedex.getPokemon(1);
+            assertEquals("Vaporeon", pokemon.getName());
+            assertEquals("Pikachu", pokedex.getPokemonMetadata(25).getName());
         } catch (PokedexException e) {
             assertEquals("Invalid ID", e.getMessage());
         }
+    }
+
+    @Test
+    public void testGetPokemons() {
+        pokedex.addPokemon(pokemon1);
+        pokedex.addPokemon(pokemon2);
+        List<Pokemon> pokemonList = pokedex.getPokemons();
+        assertEquals("Vaporeon", pokemonList.get(1).getName());
+        pokemonList = pokedex.getPokemons(PokemonComparators.NAME);
+        assertEquals("Bulbasaur", pokemonList.get(0).getName());
     }
 }
