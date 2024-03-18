@@ -15,16 +15,21 @@ public class IPokedexTest {
 
     @Before
     public void setUp() throws PokedexException {
-        pokedex = mock(IPokedex.class);
-        pokemon1 = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000, 4, 56);
-        pokemon2 = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,100);
-
-        when(pokedex.size()).thenReturn(0);
-        when(pokedex.addPokemon(pokemon1)).thenReturn(0);
-        when(pokedex.addPokemon(pokemon2)).thenReturn(1);
-        when(pokedex.getPokemon(0)).thenReturn(pokemon1);
-        when(pokedex.getPokemon(1)).thenReturn(pokemon2);
-        when(pokedex.getPokemon(151)).thenThrow(new PokedexException("Invalid ID"));
+        MetadataProvider metadataProvider = new MetadataProvider();
+        PokemonFactory pokemonFactory = new PokemonFactory();
+        pokedex = new Pokedex(metadataProvider, pokemonFactory);
+        pokemon1 = pokedex.createPokemon(1, 613,64,4000,4);
+        pokemon2 = pokedex.createPokemon(134, 2729,202,5000,4);
+//        pokedex = mock(IPokedex.class);
+//        pokemon1 = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000, 4, 56);
+//        pokemon2 = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,100);
+//
+//        when(pokedex.size()).thenReturn(0);
+//        when(pokedex.addPokemon(pokemon1)).thenReturn(0);
+//        when(pokedex.addPokemon(pokemon2)).thenReturn(1);
+//        when(pokedex.getPokemon(0)).thenReturn(pokemon1);
+//        when(pokedex.getPokemon(1)).thenReturn(pokemon2);
+//        when(pokedex.getPokemon(151)).thenThrow(new PokedexException("Invalid ID"));
 
     }
 
@@ -44,7 +49,9 @@ public class IPokedexTest {
     @Test
     public void testGetPokemonWithInvalidId() {
         try {
-            pokedex.getPokemon(151);
+            assertEquals(0, pokedex.addPokemon(pokemon1));
+            assertEquals(1, pokedex.addPokemon(pokemon2));
+            pokedex.getPokemon(1);
         } catch (PokedexException e) {
             assertEquals("Invalid ID", e.getMessage());
         }

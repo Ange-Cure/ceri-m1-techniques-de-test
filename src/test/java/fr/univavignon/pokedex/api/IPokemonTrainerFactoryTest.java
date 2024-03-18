@@ -9,21 +9,21 @@ import static org.mockito.Mockito.when;
 
 public class IPokemonTrainerFactoryTest {
     private IPokemonTrainerFactory iPokemonTrainerFactory;
-    private IPokedex pokedex;
+    private IPokedexFactory iPokedexFactory;
 
     @Before
     public void setUp() {
-        iPokemonTrainerFactory = mock(IPokemonTrainerFactory.class);
-        IPokedexFactory iPokedexFactory = mock(IPokedexFactory.class);
-        when(iPokemonTrainerFactory.createTrainer("Ange", Team.MYSTIC, iPokedexFactory)).thenReturn(new PokemonTrainer("Ange", Team.MYSTIC, pokedex));
+        iPokemonTrainerFactory = new PokemonTrainerFactory();
+        iPokedexFactory = new PokedexFactory();
+//        iPokemonTrainerFactory = mock(IPokemonTrainerFactory.class);
+//        IPokedexFactory iPokedexFactory = mock(IPokedexFactory.class);
+//        when(iPokemonTrainerFactory.createTrainer("Ange", Team.MYSTIC, iPokedexFactory)).thenReturn(new PokemonTrainer("Ange", Team.MYSTIC, pokedex));
     }
 
     @Test
     public void testCreateTrainer() {
-
-        PokemonTrainer pokemonTrainer = new PokemonTrainer("Ange", Team.MYSTIC, pokedex);
+        PokemonTrainer pokemonTrainer = iPokemonTrainerFactory.createTrainer("Ange", Team.MYSTIC, iPokedexFactory);
         assertEquals("Ange", pokemonTrainer.getName());
         assertEquals(Team.MYSTIC, pokemonTrainer.getTeam());
-        assertEquals(pokedex, pokemonTrainer.getPokedex());
     }
 }
