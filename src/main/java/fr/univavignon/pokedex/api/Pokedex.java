@@ -1,5 +1,6 @@
 package fr.univavignon.pokedex.api;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -38,7 +39,7 @@ public class Pokedex implements IPokedex{
         return copyPokemonList;
     }
 
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException, IOException {
         return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
     }
 

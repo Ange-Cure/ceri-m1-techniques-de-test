@@ -3,6 +3,7 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -16,7 +17,7 @@ public class IPokedexTest {
     private Pokemon pokemon2;
 
     @Before
-    public void setUp() throws PokedexException {
+    public void setUp() throws PokedexException, IOException {
         MetadataProvider metadataProvider = new MetadataProvider();
         PokemonFactory pokemonFactory = new PokemonFactory();
         pokedex = new Pokedex(metadataProvider, pokemonFactory);
