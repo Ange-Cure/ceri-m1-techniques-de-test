@@ -3,12 +3,8 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class IPokemonTrainerFactoryTest {
     private IPokemonTrainerFactory iPokemonTrainerFactory;
@@ -24,7 +20,7 @@ public class IPokemonTrainerFactoryTest {
     }
 
     @Test
-    public void testCreateTrainer() throws IOException {
+    public void testCreateTrainer() {
         PokemonTrainer pokemonTrainer = iPokemonTrainerFactory.createTrainer("Ange", Team.MYSTIC, iPokedexFactory);
         assertEquals("Ange", pokemonTrainer.getName());
         assertEquals(Team.MYSTIC, pokemonTrainer.getTeam());

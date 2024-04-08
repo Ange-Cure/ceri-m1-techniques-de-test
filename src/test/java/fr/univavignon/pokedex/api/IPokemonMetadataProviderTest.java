@@ -3,17 +3,13 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class IPokemonMetadataProviderTest {
     private IPokemonMetadataProvider metadataProvider;
 
     @Before
-    public void setUp() throws PokedexException, IOException {
+    public void setUp() {
 //        metadataProvider = mock(IPokemonMetadataProvider.class);
 //        when(metadataProvider.getPokemonMetadata(0)).thenReturn(new PokemonMetadata(0, "Bulbasaur", 118, 111, 128));
 //        when(metadataProvider.getPokemonMetadata(151)).thenThrow(new PokedexException("Pokemon not found"));

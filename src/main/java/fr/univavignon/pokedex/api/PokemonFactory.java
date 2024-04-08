@@ -1,7 +1,5 @@
 package fr.univavignon.pokedex.api;
 
-import java.io.IOException;
-
 public class PokemonFactory implements IPokemonFactory {
     /**
      * Creates a pokemon instance computing it IVs.
@@ -14,7 +12,7 @@ public class PokemonFactory implements IPokemonFactory {
      * @return Created pokemon instance.
      */
     @Override
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException, IOException {
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
         MetadataProvider metadataProvider = new MetadataProvider();
         PokemonMetadata metadata = metadataProvider.getPokemonMetadata(index);
         double CP_MULTIPLIER = 0.1;

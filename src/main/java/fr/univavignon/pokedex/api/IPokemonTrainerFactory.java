@@ -1,7 +1,5 @@
 package fr.univavignon.pokedex.api;
 
-import java.io.IOException;
-
 /**
  * Factory interface for class that aims to create PokemonTrainer instance.
  * 
@@ -17,6 +15,6 @@ public interface IPokemonTrainerFactory {
 	 * @param pokedexFactory Factory to use for creating associated pokedex instance.
 	 * @return Created trainer instance.
 	 */
-	PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) throws IOException;
+	PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory);
 	
 }

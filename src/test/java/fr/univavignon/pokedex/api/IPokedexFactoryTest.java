@@ -3,12 +3,8 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 
 public class IPokedexFactoryTest {
@@ -17,7 +13,7 @@ public class IPokedexFactoryTest {
     private MetadataProvider metadataProvider;
     private PokemonFactory pokemonFactory;
     @Before
-    public void setUp() throws IOException {
+    public void setUp() {
         metadataProvider = new MetadataProvider();
         pokemonFactory = new PokemonFactory();
         pokedexFactory = new PokedexFactory();

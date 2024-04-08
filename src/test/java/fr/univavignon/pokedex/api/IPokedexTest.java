@@ -3,12 +3,9 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class IPokedexTest {
 
@@ -17,7 +14,7 @@ public class IPokedexTest {
     private Pokemon pokemon2;
 
     @Before
-    public void setUp() throws PokedexException, IOException {
+    public void setUp() throws PokedexException {
         MetadataProvider metadataProvider = new MetadataProvider();
         PokemonFactory pokemonFactory = new PokemonFactory();
         pokedex = new Pokedex(metadataProvider, pokemonFactory);

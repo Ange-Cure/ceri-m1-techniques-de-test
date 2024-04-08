@@ -3,11 +3,7 @@ package fr.univavignon.pokedex.api;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class IPokemonFactoryTest {
     private IPokemonFactory iPokemonFactory;
@@ -21,7 +17,7 @@ public class IPokemonFactoryTest {
     }
 
     @Test
-    public void testCreatePokemon() throws PokedexException, IOException {
+    public void testCreatePokemon() throws PokedexException {
         Pokemon pokemon = iPokemonFactory.createPokemon(1, 613, 64, 4000, 4);
         assertEquals("Bulbasaur", pokemon.getName());
         assertEquals(1, pokemon.getIndex());

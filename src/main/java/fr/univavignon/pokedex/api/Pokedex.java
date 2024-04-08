@@ -39,7 +39,7 @@ public class Pokedex implements IPokedex{
         return copyPokemonList;
     }
 
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException, IOException {
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
         return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
     }
 
