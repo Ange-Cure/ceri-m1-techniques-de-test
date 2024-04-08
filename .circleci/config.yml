@@ -27,10 +27,8 @@ jobs:
       - codecov/upload
       - run: mkdir -p ./badges
       - run: cp target/site/badges/*.svg ./badges/
-      - persist_to_workspace:
-          root: .
-          paths:
-            - badges
+      - store_artifacts:
+          path: ./badges
     deploy:
 workflows:
   build-and-test:
