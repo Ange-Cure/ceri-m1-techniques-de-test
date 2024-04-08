@@ -79,6 +79,28 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>generate-javadoc</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <show>private</show>
+                            <quiet>true</quiet>
+                            <links>
+                                <link>https://docs.oracle.com/en/java/javase/11/docs/api/</link>
+                            </links>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <testSourceDirectory>src/test/java</testSourceDirectory>
     </build>
