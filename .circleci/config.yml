@@ -25,6 +25,7 @@ jobs:
           paths:
             - ~/.m2/repository
       - codecov/upload
+      - run: mkdir -p $CIRCLE_ARTIFACTS/badges
       - run: cp target/site/badges/*.svg $CIRCLE_ARTIFACTS/badges/
     deploy:
 workflows:
