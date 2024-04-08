@@ -24,7 +24,7 @@ public class MetadataProvider implements IPokemonMetadataProvider {
                 metadataMap.put(index, metadata);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
     @Override
