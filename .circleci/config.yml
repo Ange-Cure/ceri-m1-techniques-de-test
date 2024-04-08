@@ -25,12 +25,14 @@ jobs:
           paths:
             - ~/.m2/repository
       - codecov/upload
-      - run: mkdir -p $CIRCLE_ARTIFACTS/badges
-      - run: cp target/site/badges/*.svg $CIRCLE_ARTIFACTS/badges/
+      - run: mkdir -p $CIRCLE_WORKING_DIRECTORY/badges
+      - run: cp target/site/badges/*.svg $CIRCLE_WORKING_DIRECTORY/badges/
       - persist_to_workspace:
-          root: $CIRCLE_ARTIFACTS
+          root: $CIRCLE_WORKING_DIRECTORY
           paths:
             - badges
+      - run: mkdir -p $CIRCLE_ARTIFACTS/badges
+      - run: cp $CIRCLE_WORKING_DIRECTORY/badges/*.svg $CIRCLE_ARTIFACTS/badges/
     deploy:
 workflows:
   build-and-test:
