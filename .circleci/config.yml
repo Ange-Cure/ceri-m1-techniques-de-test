@@ -1,3 +1,5 @@
+# This config was automatically generated from your source code
+# Stacks detected: deps:java:.
 version: 2.1
 orbs:
   codecov: codecov/codecov@4.0.1
@@ -27,9 +29,9 @@ jobs:
       - run: cp target/site/badges/*.svg ./badges/
       - store_artifacts:
           path: ./badges
-      - run:
-          name: Generate Javadoc
-          command: mvn javadoc:jar
+#      - run:
+#          name: Generate Javadoc
+#          command: mvn javadoc:jar
 #      - run:
 #          name: Publish Javadoc to GitHub Pages
 #          command: |
@@ -41,13 +43,10 @@ jobs:
 #            git init
 #            git add -A
 #            git commit -m "Publish Javadoc to GitHub Pages"
-#            git push --force --quiet "https://${GITHUB_TOKEN}@github.com/Ange-Cure/ceri-m1-techniques-de-test.git" master:gh-pages
+#            git push --f
     deploy:
-      production:
-        branch: master
-        commands:
-          - ./deploy.sh
 workflows:
   build-and-test:
     jobs:
       - test-java
+
