@@ -30,18 +30,18 @@ jobs:
       - run:
           name: Generate Javadoc
           command: mvn javadoc:jar
-      - run:
-          name: Publish Javadoc to GitHub Pages
-          command: |
-            mkdir -p docs/javadoc
-            mv target/site/apidocs/* docs/javadoc
-            echo 'www.example.com' > CNAME
-            git config --global user.email "you@example.com"
-            git config --global user.name "Your Name"
-            git init
-            git add -A
-            git commit -m "Publish Javadoc to GitHub Pages"
-            git push --force --quiet "https://${GITHUB_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git" master:gh-pages
+#      - run:
+#          name: Publish Javadoc to GitHub Pages
+#          command: |
+#            mkdir -p docs/javadoc
+#            mv target/site/apidocs/* docs/javadoc
+#            echo 'ange-cure.github.io' > CNAME
+#            git config --global user.email "ange.cure@alumni.univ-avignon.fr"
+#            git config --global user.name "Ange-Cure"
+#            git init
+#            git add -A
+#            git commit -m "Publish Javadoc to GitHub Pages"
+#            git push --force --quiet "https://${GITHUB_TOKEN}@github.com/Ange-Cure/ceri-m1-techniques-de-test.git" master:gh-pages
     deploy:
       production:
         branch: master
