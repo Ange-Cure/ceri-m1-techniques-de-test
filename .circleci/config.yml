@@ -27,6 +27,10 @@ jobs:
       - codecov/upload
       - run: mkdir -p $CIRCLE_ARTIFACTS/badges
       - run: cp target/site/badges/*.svg $CIRCLE_ARTIFACTS/badges/
+      - persist_to_workspace:
+        root: $CIRCLE_ARTIFACTS
+        paths:
+        - badges
     deploy:
 workflows:
   build-and-test:
