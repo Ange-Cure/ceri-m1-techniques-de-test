@@ -23,4 +23,4 @@ Tp technique de test
 * CircleCI
 * Codecov
 
-![Badge](badges/checkstyle-result.svg)
+![Badge](badge/checkstyle-result.svg)

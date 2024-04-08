@@ -71,6 +71,7 @@
                         </goals>
                         <configuration>
                             <outputDir>badge</outputDir>
+                            <outputDir>target/site/badges</outputDir>
                             <inputFiles>
                                 <inputFile>target/checkstyle-result.xml</inputFile>
                             </inputFiles>
