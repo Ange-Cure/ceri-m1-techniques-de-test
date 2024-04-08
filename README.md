@@ -22,3 +22,6 @@ Tp technique de test
 * JaCoCo
 * CircleCI
 * Codecov
+
+![Checkstyle Badge](https://circleci.com/gh/Ange-Cure/ceri-m1-techniques-de-test/master/badges/checstyle-result.svg)
+

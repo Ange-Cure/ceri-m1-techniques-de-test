@@ -25,6 +25,7 @@ jobs:
           paths:
             - ~/.m2/repository
       - codecov/upload
+      - run: cp target/site/badges/*.svg $CIRCLE_ARTIFACTS/badges/
     deploy:
 workflows:
   build-and-test:
